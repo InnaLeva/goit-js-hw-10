@@ -21,18 +21,18 @@ const promise = new Promise((resolve, reject) => {
     }, delay);
 });
 
-promise
-    .then((delay) => {
-        iziToast.success({
-            title: "Success",
-            message:  `✅ Fulfilled promise in ${delay}ms`
+    promise
+        .then((delay) => {
+            iziToast.success({
+                title: "Success",
+                message: `✅ Fulfilled promise in ${delay}ms`
             });
         })
-    .catch((delay) => {
-        iziToast.error({
-            title: "Error",
-            message: `❌ Rejected promise in ${delay}ms`
+        .catch((delay) => {
+            iziToast.error({
+                title: "Error",
+                message: `❌ Rejected promise in ${delay}ms`,
+            });
         });
-    })
     document.querySelector('input[name="delay"]').value = '';
 })
